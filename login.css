@@ -1,0 +1,264 @@
+/* 공통 CSS 변수 import */
+@import "./variables.css";
+
+/*Layout*/
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2.5rem 1rem;
+  gap: 1.5rem;
+}
+
+/*Logo*/
+.brand {
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.brand img {
+  height: 4rem;
+  width: auto;
+  display: block;
+}
+
+/*Card*/
+.login-card {
+  width: 100%;
+  max-width: 34rem;
+  border: 1.5px solid #d9d9d9;
+  border-radius: 12px;
+  background: #fff;
+  overflow: visible;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Tabs*/
+.tabs {
+  display: flex;
+  width: 100%;
+  border-bottom: 1.5px solid #d9d9d9;
+  background: none;
+  position: relative;
+  z-index: 2;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1 1 0;
+  appearance: none;
+  border: none;
+  background: #f5f5f5;
+  padding: 1.1rem 0 1.1rem 0;
+  font-size: 1.08rem;
+  font-weight: 500;
+  color: #222;
+  cursor: pointer;
+  border-radius: 0;
+  border-bottom: 1.5px solid #d9d9d9;
+  transition: background 0.15s, font-weight 0.15s;
+}
+
+.tab.is-active {
+  background: #fff;
+  color: #111;
+  font-weight: 700;
+  border-bottom: 2.5px solid #fff;
+  z-index: 3;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/*Form*/
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 2.2rem 2.2rem 1.5rem 2.2rem;
+  gap: 0.5rem;
+  background: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: none;
+}
+
+.field {
+  display: block;
+  margin-bottom: 1.6rem;
+}
+
+.label {
+  display: none;
+}
+
+input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.2rem;
+  border: none;
+  border-bottom: 1.5px solid #d9d9d9;
+  border-radius: 0;
+  outline: none;
+  font-size: 1.05rem;
+  background: transparent;
+  margin-bottom: 0.5rem;
+  color: #222;
+  transition: border-color 0.15s;
+  box-shadow: none;
+}
+
+input::placeholder {
+  color: #b5b5b5;
+  font-size: 1.05rem;
+}
+
+input:focus {
+  border-bottom: 1.5px solid #21BF48;
+  box-shadow: none;
+}
+
+/*에러 메세지*/
+.error-message {
+  min-height: 1.125rem;
+  padding-top: 0.5rem;
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--error);
+}
+
+/* 버튼*/
+.submit {
+  width: 100%;
+  height: 3.1rem;
+  margin-top: 2.1rem;
+  border: 0;
+  border-radius: 8px;
+  background: #21BF48;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.18rem;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.15s;
+  box-shadow: none;
+}
+
+.submit:active {
+  transform: translateY(0.0625rem);
+}
+
+/*링크*/
+.links {
+  margin-top: 0.875rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.625rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.dot {
+  color: #c0c0c0;
+}
+
+/*Mobile*/
+@media (max-width: 30rem) {
+  .brand img {
+    height: 3.25rem;
+  }
+
+  .login-card {
+    border-radius: 0.5rem;
+  }
+
+  .tab {
+    font-size: 0.8125rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  input {
+    height: 2.625rem;
+    font-size: 0.8125rem;
+  }
+
+  .submit {
+    height: 2.75rem;
+  }
+
+  .links {
+    font-size: 0.6875rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 30.0625rem) and (max-width: 64rem) {
+  .login-page {
+    padding: 3.75rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .brand img {
+    height: 3.75rem;
+  }
+
+  .login-card {
+    width: 26.25rem;
+  }
+
+  input {
+    height: 2.875rem;
+    font-size: 0.875rem;
+  }
+
+  .submit {
+    height: 3rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 64.0625rem) {
+  .login-page {
+    padding: 5rem 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .brand img {
+    height: 4.25rem;
+  }
+
+  .login-card {
+    width: 32.5rem;
+    border-radius: 0.75rem;
+  }
+
+  .form {
+    padding: 1.625rem 1.75rem 1.375rem;
+  }
+
+  input {
+    height: 3rem;
+    font-size: 0.9375rem;
+  }
+
+  .submit {
+    height: 3.125rem;
+    font-size: 1rem;
+  }
+
+  .links {
+    font-size: 0.8125rem;
+  }
+}
